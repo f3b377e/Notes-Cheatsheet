@@ -7,7 +7,7 @@
 - HTTP or HTTPS? 
 - Some **login similar** to the victim's domain? 
 - How many? frequency?
-- Hhow old? is it a **newly registered domains**?
+- How old? is it a **newly registered domains**?
 - What are the `From` and `Return-Path` email addresses. Do they match? What are they?
 - How to access the [Message Header](https://www.arclab.com/en/kb/email/how-to-read-and-analyze-the-email-header-fields-spf-dkim.html)
 
