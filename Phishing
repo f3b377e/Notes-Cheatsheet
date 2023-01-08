@@ -1,0 +1,64 @@
+
+# Prevent being the victim 
+
+## Phishing HandBook Detection
+
+### **Basic Check:**
+- HTTP or HTTPS? 
+- Some **login similar** to the victim's domain? 
+- How many? frequency?
+- Hhow old? is it a **newly registered domains**?
+- What are the `From` and `Return-Path` email addresses. Do they match? What are they?
+- How to access the [Message Header](https://www.arclab.com/en/kb/email/how-to-read-and-analyze-the-email-header-fields-spf-dkim.html)
+
+###  **Advance Check:**
+- Google [online tool](https://toolbox.googleapps.com/apps/messageheader/) helps to examine headers
+- [Browserling](https://www.browserling.com) to check suspicious site in a sandbox.
+- Check domain:
+	 - typosquatting: [dnstwist](https://github.com/elceef/dnstwist)
+	 - abusive IPs [abuseipdb](https://www.abuseipdb.com/)
+	 - [VirusTotal](https://www.virustotal.com/gui/)
+- Certificate Transparency Logs (CTL): [certdb](https://certdb.com/),  [crt.sh](https://crt.sh/), [Censys](https://0xpatrik.com/censys-guide/)
+- Analyze links and attachments: 
+	- OSINT: [reverse whois](https://www.whoxy.com/reverse-whois/))
+	-  [VirusTotal](https://www.virustotal.com/gui/)
+	-  malware sandbox: [Cuckoo](https://cuckoosandbox.org/), [Hybrid Analysis](https://www.hybrid-analysis.com/), [Joe Sandbox](https://www.joesecurity.org/), or [VMray](https://www.vmray.com/).
+- Check phishing campain in [phishFinder](https://phishfinder.io/)
+- Monitor the HTTP and HTTPS web pages of the suspicious domains and subdomain SIEM/logmanager.
+- Check open **ports** of the related IPs to see if it's open and running an instance of `gophish` or similar tools (3333 ?).
+- Need [NetworkTools](https://mxtoolbox.com/NetworkTools.aspx)?
+- TLDs check: [Whoxy](https://www.whoxy.com/newly-registered-domains/), [whois](https://who.is/)
+
+## Automation
+- CTI
+- SIEM
+- Malware detection (api?)
+- Send email to victim what to do.
+- How [docusign](https://github.com/drego85/HackInBo/blob/master/Slide/2019.11.09_Tredicesima_Edizione/04_The_only_way_to_survive_is_to_automate_your_SOC.pdf) Automate phishing detection
+- Open source projects:
+	- Automated Phishing Email Analysis: [ThePhish](https://github.com/emalderson/ThePhish) [paper](https://ceur-ws.org/Vol-3260/paper6.pdf) 
+	- CTI: [crowdsec](https://www.crowdsec.net/), [thehive](https://thehive-project.org/)
+
+## User Awareness
+- CERTFin
+- CSIRT
+- Phishing campaign Test ([gophish](https://getgophish.com/))
+
+## Incident Response & Reporting
+- HandBook
+- Send Email
+- Reporting/Ticketing
+- **Report abusive IPs on** [abuseipdb](https://www.abuseipdb.com/)
+---
+# Prevent being the attack vector:
+- Spi
+- Dkim
+- Dmarc
+
+****
+### References:
+- [HackTrick detection](https://book.hacktricks.xyz/generic-methodologies-and-resources/phishing-methodology/detecting-phising)
+- [playbook-phishing.md](https://github.com/counteractive/incident-response-plan-template/blob/master/playbooks/playbook-phishing.md)
+- Automated Open-Source Phishing Email Analysis [paper](https://ceur-ws.org/Vol-3260/paper6.pdf)
+- [Phishing Attack against Ukrainian Government](https://www.intezer.com/blog/malware-analysis/targeted-phishing-attack-against-ukrainian-government-expands-to-georgia/)
+- [bypass 2FA](https://m0chan.github.io/2019/07/26/Bypassing-2FA-For-Fun-With-Evilginx2.html)
